@@ -1,5 +1,6 @@
 import TaskAdd from "../components/task/TaskAdd";
 import TaskList from "../components/task/TaskList";
+import { HeadingH3 } from "../components/ui/Heading";
 
 const TASK_DUMMY = [
   {
@@ -23,6 +24,7 @@ export default function HomePage() {
   return (
     <>
       <TaskAdd />
+      <HeadingH3>To Do</HeadingH3>
       <TaskList taskList={TASK_DUMMY} />
     </>
   );
