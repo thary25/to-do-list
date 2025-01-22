@@ -2,26 +2,32 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
-  margin: 20px 0 0 20px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .form input {
   padding: 10px;
-  width: 400px;
+  width: 100%;
   background-color: #292850;
   border: none;
   outline: none;
   border-radius: 10px;
-  height: 31px;
+  height: 45px;
   color: #bebede;
 }
 
 .form button {
   background-color: #417ab0;
-  border: none;
+  border: 2px solid transparent;
   padding: 10px 30px;
   border-radius: 10px;
   cursor: pointer;
   color: #bebede;
   font-weight: bold;
+  transition: all 200ms ease-in-out;
+}
+.form button:hover {
+  background-color: #292850;
+  border: 2px solid #417ab0;
 }

@@ -1,6 +1,7 @@
 import TaskAdd from "../components/task/TaskAdd";
 import TaskList from "../components/task/TaskList";
 import { HeadingH3 } from "../components/ui/Heading";
+import Section from "../components/ui/Section";
 
 const TASK_DUMMY = [
   {
@@ -23,9 +24,11 @@ const TASK_DUMMY = [
 export default function HomePage() {
   return (
     <>
-      <TaskAdd />
-      <HeadingH3>To Do</HeadingH3>
-      <TaskList taskList={TASK_DUMMY} />
+      <Section>
+        <TaskAdd />
+        <HeadingH3>To Do</HeadingH3>
+        <TaskList taskList={TASK_DUMMY} />
+      </Section>
     </>
   );
 }
