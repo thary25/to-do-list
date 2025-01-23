@@ -9,3 +9,17 @@
   width: 100%;
   margin: 5px 0;
 }
+
+.delete {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #d34058;
+  color: #fcd5d6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #c21632;
+}

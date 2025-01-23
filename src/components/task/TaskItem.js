@@ -7,7 +7,10 @@ export default function TaskItem({ task }) {
       <span>
         <input type="checkbox" /> {text}
       </span>
-      <span>{date}</span>
+      <div>
+        <span>{date}</span>
+        <button className={classes.delete}>Delete</button>
+      </div>
     </li>
   );
 }
