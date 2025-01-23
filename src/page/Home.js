@@ -20,12 +20,27 @@ export default function HomePage() {
       return newTaskList;
     });
   }
+
+  let taskIsNotNull = true;
+  if (taskList.length > 0) {
+    taskIsNotNull = false;
+  }
+
   return (
     <>
       <Section>
         <TaskAdd action={addTaskHandler} />
-        <HeadingH3>To Do</HeadingH3>
-        <TaskList taskList={taskList} deleteTask={deleteTaskHandler} />
+        {taskIsNotNull && (
+          <p>
+            You currently have no tasks. Time to add something to your list!
+          </p>
+        )}
+        {!taskIsNotNull && (
+          <>
+            <HeadingH3>To Do</HeadingH3>
+            <TaskList taskList={taskList} deleteTask={deleteTaskHandler} />
+          </>
+        )}
       </Section>
     </>
   );
