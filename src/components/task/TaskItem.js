@@ -1,7 +1,7 @@
 import classes from "./TaskItem.module.css";
 
-export default function TaskItem({ task }) {
-  const { text, date } = task;
+export default function TaskItem({ task, deleteTaskAction }) {
+  const { id, text, date } = task;
   return (
     <li className={classes.item}>
       <span>
@@ -9,7 +9,9 @@ export default function TaskItem({ task }) {
       </span>
       <div>
         <span>{date}</span>
-        <button className={classes.delete}>Delete</button>
+        <button onClick={() => deleteTaskAction(id)} className={classes.delete}>
+          Delete
+        </button>
       </div>
     </li>
   );
