@@ -9,17 +9,17 @@ export default function HomePage() {
 
   function addTaskHandler(text, date, status = "to-do") {
     setTaskList((prevState) => {
-      return [...prevState, { text, date, status }];
+      const id = prevState.length;
+      return [...prevState, { id, text, date, status }];
     });
   }
 
   function deleteTaskHandler(idTask) {
     setTaskList((prevState) => {
-      const newTaskList = prevState.filter((id) => id !== idTask);
+      const newTaskList = prevState.filter((task) => task.id !== idTask);
       return newTaskList;
     });
   }
-
   return (
     <>
       <Section>
