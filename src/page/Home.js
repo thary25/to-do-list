@@ -21,6 +21,14 @@ export default function HomePage() {
     });
   }
 
+  function completeTaskHandler(idTask) {
+    setTaskList((prevState) => {
+      return prevState.map((task) =>
+        task.id === idTask ? { ...task, status: "complete" } : task
+      );
+    });
+  }
+
   let taskIsNotNull = true;
   if (taskList.length > 0) {
     taskIsNotNull = false;
@@ -38,7 +46,11 @@ export default function HomePage() {
         {!taskIsNotNull && (
           <>
             <HeadingH3>To Do</HeadingH3>
-            <TaskList taskList={taskList} deleteTask={deleteTaskHandler} />
+            <TaskList
+              taskList={taskList}
+              deleteTask={deleteTaskHandler}
+              completeTaskAction={completeTaskHandler}
+            />
           </>
         )}
       </Section>
