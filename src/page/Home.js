@@ -48,22 +48,28 @@ export default function HomePage() {
         )}
         {!taskIsNotNull && (
           <>
-            <HeadingH3>To Do</HeadingH3>
-            <TaskList
-              taskList={taskToDo}
-              deleteTask={deleteTaskHandler}
-              completeTaskAction={completeTaskHandler}
-            />
+            {taskToDo.length > 0 && (
+              <>
+                <HeadingH3>To Do</HeadingH3>
+                <TaskList
+                  taskList={taskToDo}
+                  deleteTask={deleteTaskHandler}
+                  completeTaskAction={completeTaskHandler}
+                />
+              </>
+            )}
+            {taskCompleted.length > 0 && (
+              <>
+                <HeadingH3>Completed</HeadingH3>
+                <TaskList
+                  taskList={taskCompleted}
+                  deleteTask={deleteTaskHandler}
+                  completeTaskAction={completeTaskHandler}
+                />
+              </>
+            )}
           </>
         )}
-        <>
-          <HeadingH3>Completed</HeadingH3>
-          <TaskList
-            taskList={taskCompleted}
-            deleteTask={deleteTaskHandler}
-            completeTaskAction={completeTaskHandler}
-          />
-        </>
       </Section>
     </>
   );
