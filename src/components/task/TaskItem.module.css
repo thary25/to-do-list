@@ -37,3 +37,7 @@
 .done:hover {
   background-color: #129153;
 }
+
+.complete {
+  text-decoration: line-through;
+}

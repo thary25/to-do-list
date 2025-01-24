@@ -34,6 +34,9 @@ export default function HomePage() {
     taskIsNotNull = false;
   }
 
+  const taskCompleted = taskList.filter((task) => task.status !== "to-do");
+  const taskToDo = taskList.filter((task) => task.status !== "complete");
+
   return (
     <>
       <Section>
@@ -47,12 +50,20 @@ export default function HomePage() {
           <>
             <HeadingH3>To Do</HeadingH3>
             <TaskList
-              taskList={taskList}
+              taskList={taskToDo}
               deleteTask={deleteTaskHandler}
               completeTaskAction={completeTaskHandler}
             />
           </>
         )}
+        <>
+          <HeadingH3>Completed</HeadingH3>
+          <TaskList
+            taskList={taskCompleted}
+            deleteTask={deleteTaskHandler}
+            completeTaskAction={completeTaskHandler}
+          />
+        </>
       </Section>
     </>
   );

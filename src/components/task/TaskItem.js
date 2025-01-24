@@ -9,7 +9,9 @@ export default function TaskItem({
 
   return (
     <li className={classes.item}>
-      <p>{text}</p>
+      <p className={status === "complete" ? classes.complete : undefined}>
+        {text}
+      </p>
       <div>
         <span>{date}</span>
         {status !== "complete" && (
